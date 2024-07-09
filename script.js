@@ -12,6 +12,8 @@ let currentCountry = {};
 let index = 0;
 let buttonIndex = 0;
 let score = 0;
+let totalQuestionsIndex = 0;
+let rightAnswersIndex = 0;
 
 scoreText.style.visibility = 'hidden';
 
@@ -55,14 +57,19 @@ function checkAnswer(selectedCountry) {
         resultText.textContent = 'Corretto!';
         resultText.style.color = 'green';
         score++;
+        totalQuestionsIndex++;
+        rightAnswersIndex++;
     } else {
         resultText.style.visibility = 'visible';
         resultText.innerText = `Sbagliato! La risposta corretta era:\n${currentCountry.name.common}.`;
         resultText.style.color = 'red';
+        totalQuestionsIndex++;
         score--;
     }
     scoreText.style.visibility = 'visible';
-    scoreText.innerText = `Il tuo punteggio è...\n${score}!`;
+    let rightAnswersPerc = ((rightAnswersIndex / totalQuestionsIndex) * 100);
+    scoreText.innerText = `Il tuo punteggio è...\n${score}!\nHai risposto correttamente al ${rightAnswersPerc}% delle domande!`;
+
 
 }
 
