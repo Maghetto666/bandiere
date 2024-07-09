@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionsContainer = document.getElementById('options-container');
     const nextBtn = document.getElementById('next-btn');
     const resultText = document.getElementById('result');
-
+    let responseButtons = [];
     let countries = [];
     let currentCountry = {};
 
@@ -16,18 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function newQuestion() {
         resultText.textContent = '';
-        nextBtn.style.display = 'none';
+        nextBtn.style.visibility = 'hidden';
+        resultText.style.visibility = 'hidden';
         optionsContainer.innerHTML = '';
 
         const randomCountries = getRandomCountries(4);
         currentCountry = randomCountries[Math.floor(Math.random() * randomCountries.length)];
 
         flagImg.src = currentCountry.flags.png;
-
+        responseButtons = [];
         randomCountries.forEach(country => {
             const button = document.createElement('button');
             button.textContent = country.name.common;
             button.addEventListener('click', () => checkAnswer(country));
+            responseButtons.push(button);
             optionsContainer.appendChild(button);
         });
     }
@@ -38,14 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkAnswer(selectedCountry) {
+        responseButtons.forEach(button => {
+            button.disabled = true;
+        });
         if (selectedCountry.name.common === currentCountry.name.common) {
+            resultText.style.visibility = 'visible';
             resultText.textContent = 'Corretto!';
             resultText.style.color = 'green';
         } else {
-            resultText.textContent = `Sbagliato! La risposta corretta era ${currentCountry.name.common}.`;
+            resultText.style.visibility = 'visible';
+            resultText.innerText = `Sbagliato! La risposta corretta era:\n${currentCountry.name.common}.`;
             resultText.style.color = 'red';
         }
-        nextBtn.style.display = 'block';
+        nextBtn.style.visibility = 'visible';
     }
 
     nextBtn.addEventListener('click', newQuestion);

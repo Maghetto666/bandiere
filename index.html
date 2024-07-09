@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indovina la bandiera</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="quiz-container">
-        <h1>Flag Quiz Game</h1>
-        <div id="flag-container">
-            <img id="flag" src="" alt="Country Flag">
-        </div>
-        <div id="options-container"></div>
-        <button id="next-btn" style="display: none;">Next</button>
-        <p id="result"></p>
+    <div class="firstColumn">
+        <button id="changeTheme">Cambia tema!</button>
     </div>
+    <div class="secondColumn">
+        <div id="quiz-container">
+            <h1>Flag Quiz Game</h1>
+            <div id="flag-container">
+                <img id="flag" src="" alt="Country Flag">
+            </div>
+            <div id="options-container"></div>
+            <p id="result">La risposta corretta era:\nBurkina Faso</p>
+        </div>
+        <button id="next-btn">Next</button>
+    </div>
+    <div class="thirdColumn">
+        <div class="score"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
