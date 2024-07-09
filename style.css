@@ -15,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #FF5252;
+    background-color: #FFCDD2;
     margin: 0;
 }
 
@@ -81,10 +81,12 @@ h1 {
     cursor: pointer;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
 }
 
 #options-container button:hover {
     background: #D32F2F;
+    
 }
 
 #next-btn {
@@ -94,9 +96,10 @@ h1 {
     background-color: #D32F2F;
     font-size: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;   
+    cursor: pointer;
     padding: 24px 16px;
     width: 130px;
+    transition: 0.3s;
 }
 
 #next-btn:hover {
@@ -128,9 +131,9 @@ h1 {
     font-size: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    transition: 0.3s;
 }
 
 #changetheme-btn:hover {
     background-color: #d41d1d;
-
 }
