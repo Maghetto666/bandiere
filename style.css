@@ -38,7 +38,7 @@ h1 {
     text-align: center;
 }
 
-#quiz-container {
+.quiz-container {
     display: flex;
     flex-direction: column;
     background: #F44336;
@@ -62,18 +62,18 @@ h1 {
     border: 1px solid #ccc;
 }
 
-#options-container {
+.options-container {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
 }
 
-#options-container button {
+.options-container button {
     display: grid;
     margin: 10px 0;
     padding: 5px 5px;
     width: 240px;
-    background: #FFCDD2;
+    background: #fff;
     color: #212121;
     font-weight: bold;
     border: none;
@@ -84,12 +84,12 @@ h1 {
     transition: 0.3s;
 }
 
-#options-container button:hover {
-    background: #D32F2F;
-    
+.options-container button:hover {
+    background: #a8a8a8;
+
 }
 
-#next-btn {
+.next-btn {
     border-radius: 8px;
     color: #212121;
     font-weight: bold;
@@ -102,7 +102,7 @@ h1 {
     transition: 0.3s;
 }
 
-#next-btn:hover {
+.next-btn:hover {
     background: #d41d1d;
 }
 
@@ -122,7 +122,7 @@ h1 {
     font-weight: bold;
 }
 
-#changetheme-btn {
+.changetheme-btn {
     border-radius: 8px;
     color: #212121;
     font-weight: bold;
@@ -134,6 +134,28 @@ h1 {
     transition: 0.3s;
 }
 
-#changetheme-btn:hover {
+.changetheme-btn:hover {
     background-color: #d41d1d;
+}
+
+.new-quiz-container {
+    background-color: #4CAF50;
+}
+
+.new-next-btn {
+    color: #212121;
+    background-color: #388E3C;
+}
+
+.new-next-btn:hover {
+    background-color: #1b8d21;
+}
+
+.new-changetheme-btn {
+    color: #212121;
+    background-color: #388E3C;
+}
+
+.new-changetheme-btn:hover {
+    background-color: #1b8d21;
 }
