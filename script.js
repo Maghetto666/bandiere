@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionsContainer = document.getElementById('options-container');
     const nextBtn = document.getElementById('next-btn');
     const resultText = document.getElementById('result');
+    const changeThemeButton = document.getElementById('changetheme-btn');
     let responseButtons = [];
     let countries = [];
     let currentCountry = {};
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function newQuestion() {
         resultText.textContent = '';
-        nextBtn.style.visibility = 'hidden';
+        
         resultText.style.visibility = 'hidden';
         optionsContainer.innerHTML = '';
 
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultText.innerText = `Sbagliato! La risposta corretta era:\n${currentCountry.name.common}.`;
             resultText.style.color = 'red';
         }
-        nextBtn.style.visibility = 'visible';
+        
     }
 
     nextBtn.addEventListener('click', newQuestion);

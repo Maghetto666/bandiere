@@ -1,3 +1,13 @@
+/*
+D32F2F DARK PRIMARY COLOR
+FFCDD2 LIGHT PRIMARY COLOR
+F44336 PRIMARY COLOR
+FF5252 ACCENT COLOR
+212121 PRIMARY TEXT
+757575 SECONDARY TEXT
+FFFFFF TEXT
+*/
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -5,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #FF5252;
     margin: 0;
 }
 
@@ -16,7 +26,6 @@ h1 {
 .firstColumn {
     width: 33vw;
     text-align: center;
-
 }
 
 .secondColumn {
@@ -32,10 +41,10 @@ h1 {
 #quiz-container {
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: #F44336;
     height: 90vh;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     align-items: center;
 }
@@ -63,35 +72,65 @@ h1 {
     display: grid;
     margin: 10px 0;
     padding: 5px 5px;
-    width: 210px;
-    background: #007BFF;
-    color: #fff;
+    width: 240px;
+    background: #FFCDD2;
+    color: #212121;
+    font-weight: bold;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #options-container button:hover {
-    background: #0056b3;
+    background: #D32F2F;
 }
 
 #next-btn {
-    padding: 10px 20px;
+    border-radius: 8px;
+    color: #212121;
+    font-weight: bold;
+    background-color: #D32F2F;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;   
+    padding: 24px 16px;
     width: 130px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 #next-btn:hover {
-    background: #218838;
+    background: #d41d1d;
+}
+
+.resultContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 80%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #result {
     margin-top: 20px 0 0 0;
     font-weight: bold;
+}
+
+#changetheme-btn {
+    border-radius: 8px;
+    color: #212121;
+    font-weight: bold;
+    background-color: #D32F2F;
+    padding: 24px 16px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#changetheme-btn:hover {
+    background-color: #d41d1d;
+
 }
