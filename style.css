@@ -21,7 +21,7 @@ body {
 
 h1 {
     font-family: "Baskervville SC", serif;
-    
+
 }
 
 .firstColumn {
@@ -37,7 +37,7 @@ h1 {
 .thirdColumn {
     width: 33vw;
     text-align: center;
-    
+
 }
 
 .quiz-container {
@@ -174,4 +174,37 @@ h1 {
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.diff-btn {
+    border-radius: 8px;
+    color: #212121;
+    font-weight: bold;
+    background-color: #D32F2F;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 24px 16px;
+    width: 130px;
+    transition: 0.3s;
+}
+
+.new-diff-btn {
+    color: #212121;
+    background-color: #388E3C;
+}
+
+.new-diff-btn:hover {
+    background-color: #1b8d21;
+}
+
+.openAnswer {
+    width: 240px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 24px;
 }
