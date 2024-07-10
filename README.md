@@ -14,7 +14,7 @@ Indovina la bandiera è un semplice gioco in cui l'utente deve indovinare la naz
 1. Clona il repository:
 
     ```bash
-    git clone https://github.com/unozer/bandiere.git
+    git clone https://github.com/Maghetto666/bandiere.git
     ```
 
 2. Naviga nella cartella del progetto:
