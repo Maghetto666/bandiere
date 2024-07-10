@@ -7,6 +7,10 @@ const resultText = document.getElementById('result');
 const changeThemeButton = document.querySelector('.changetheme-btn');
 const scoreText = document.querySelector('.score');
 const diffBtn = document.querySelector('.diff-btn');
+const wrongAnswerSound = new Audio("wrong.mp3");
+const rightAnswerSound = new Audio("right.mp3");
+const clickSound = new Audio("click.mp3");
+const changeThemeSound = new Audio("themechange.mp3");
 let responseButtons = [];
 let countries = [];
 let currentCountry = {};
@@ -151,6 +155,8 @@ fetchCountries();
 changeThemeButton.addEventListener('click', changeTheme);
 
 function changeTheme() {
+    changeThemeSound.play()
+    window.setTimeout(changeThemeSound.pause(), 1500);
     if (index % 2 == 0) {
         document.body.style.backgroundColor = '#C8E6C9';
         index++;
