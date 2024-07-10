@@ -11,6 +11,10 @@ const wrongAnswerSound = new Audio("wrong.mp3");
 const rightAnswerSound = new Audio("right.mp3");
 const clickSound = new Audio("click.mp3");
 const changeThemeSound = new Audio("themechange.mp3");
+const hardDiffSound = new Audio("harddiff.mp3");
+const easyDiffSound = new Audio("easydiff.mp3");
+const nextBtnSound = new Audio("nextquestion.mp3");
+
 let responseButtons = [];
 let countries = [];
 let currentCountry = {};
@@ -136,6 +140,13 @@ function checkAnswer(selectedCountry) {
 
 }
 
+nextBtn.addEventListener('click', nextSound);
+
+function nextSound() {
+    nextBtnSound.play();
+    window.setTimeout(stopAudio(nextBtnSound), 2000);
+}
+
 nextBtn.addEventListener('click', newQuestion);
 
 diffBtn.addEventListener('click', changeDiff);
@@ -144,9 +155,12 @@ function changeDiff() {
     if (diffHard == false) {
         diffHard = true;
         diffBtn.innerText = 'HARD'
+        hardDiffSound.play();
+        window.setTimeout(stopAudio(hardDiffSound), 3000);
     } else {
         diffHard = false;
         diffBtn.innerText = 'EASY'
+        easyDiffSound.play();
 
     }
     newQuestion()
@@ -158,7 +172,7 @@ changeThemeButton.addEventListener('click', changeTheme);
 
 function changeTheme() {
     changeThemeSound.play()
-    window.setTimeout(stopAudio, 1500);
+    window.setTimeout(stopAudio(changeThemeSound), 1500);
 
     if (index % 2 == 0) {
         document.body.style.backgroundColor = '#C8E6C9';
@@ -174,6 +188,7 @@ function changeTheme() {
     diffBtn.classList.toggle("new-diff-btn")
 }
 
-function stopAudio() {
-changeThemeSound.pause()
+function stopAudio(audio) {
+audio.pause()
+audio.currentTime = 0;
 }
