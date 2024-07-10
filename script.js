@@ -81,9 +81,8 @@ function keyPress(event, value) {
 }
 
 function checkOpenAnswer(inputAnswer) {
-    console.log(inputAnswer.toLowerCase());
-    console.log(currentCountry.name.common.toLowerCase());
     if (inputAnswer.toLowerCase() === currentCountry.translations.ita.common.toLowerCase()) {
+        rightAnswerSound.play();
         resultText.style.visibility = 'visible';
         resultText.textContent = 'Corretto!';
         resultText.style.color = 'green';
@@ -93,6 +92,7 @@ function checkOpenAnswer(inputAnswer) {
         totalQuestionsIndex++;
         rightAnswersIndex++;
     } else {
+        wrongAnswerSound.play();
         resultText.style.visibility = 'visible';
         resultText.innerText = `Sbagliato! La risposta corretta era:\n${currentCountry.translations.ita.common}.`;
         resultText.style.color = 'red';
@@ -113,7 +113,8 @@ function checkAnswer(selectedCountry) {
     responseButtons.forEach(button => {
         button.disabled = true;
     });
-    if (selectedCountry.name.common === currentCountry.translations.ita.common) {
+    if (selectedCountry.translations.ita.common === currentCountry.translations.ita.common) {
+        rightAnswerSound.play();
         resultText.style.visibility = 'visible';
         resultText.textContent = 'Corretto!';
         resultText.style.color = 'green';
@@ -121,6 +122,7 @@ function checkAnswer(selectedCountry) {
         totalQuestionsIndex++;
         rightAnswersIndex++;
     } else {
+        wrongAnswerSound.play();
         resultText.style.visibility = 'visible';
         resultText.innerText = `Sbagliato! La risposta corretta era:\n${currentCountry.translations.ita.common}.`;
         resultText.style.color = 'red';
@@ -128,7 +130,7 @@ function checkAnswer(selectedCountry) {
         score--;
     }
     scoreText.style.visibility = 'visible';
-    let rightAnswersPerc = ((rightAnswersIndex / totalQuestionsIndex) * 100);
+    let rightAnswersPerc = Math.floor((rightAnswersIndex / totalQuestionsIndex) * 100);
     scoreText.innerText = `Il tuo punteggio è...\n${score}!\nHai risposto correttamente al ${rightAnswersPerc}% delle domande!`;
 
 
@@ -156,7 +158,8 @@ changeThemeButton.addEventListener('click', changeTheme);
 
 function changeTheme() {
     changeThemeSound.play()
-    window.setTimeout(changeThemeSound.pause(), 1500);
+    window.setTimeout(stopAudio, 1500);
+
     if (index % 2 == 0) {
         document.body.style.backgroundColor = '#C8E6C9';
         index++;
@@ -169,4 +172,8 @@ function changeTheme() {
     nextBtn.classList.toggle("new-next-btn");
     changeThemeButton.classList.toggle("new-changetheme-btn");
     diffBtn.classList.toggle("new-diff-btn")
+}
+
+function stopAudio() {
+changeThemeSound.pause()
 }
