@@ -144,7 +144,7 @@ nextBtn.addEventListener('click', nextSound);
 
 function nextSound() {
     nextBtnSound.play();
-    window.setTimeout(stopAudio(nextBtnSound), 2000);
+    window.setTimeout(() => {stopAudio(nextBtnSound)}, 2000);
 }
 
 nextBtn.addEventListener('click', newQuestion);
@@ -156,7 +156,7 @@ function changeDiff() {
         diffHard = true;
         diffBtn.innerText = 'HARD'
         hardDiffSound.play();
-        window.setTimeout(stopAudio(hardDiffSound), 3000);
+        window.setTimeout(() => {stopAudio(hardDiffSound)}, 3000);
     } else {
         diffHard = false;
         diffBtn.innerText = 'EASY'
@@ -172,7 +172,7 @@ changeThemeButton.addEventListener('click', changeTheme);
 
 function changeTheme() {
     changeThemeSound.play()
-    window.setTimeout(stopAudio(changeThemeSound), 1500);
+    window.setTimeout(() => {stopAudio(changeThemeSound)}, 1500);
 
     if (index % 2 == 0) {
         document.body.style.backgroundColor = '#C8E6C9';
