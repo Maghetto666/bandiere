@@ -6,14 +6,15 @@ const nextBtn = document.querySelector('.next-btn');
 const resultText = document.getElementById('result');
 const changeThemeButton = document.querySelector('.changetheme-btn');
 const scoreText = document.querySelector('.score');
+const infoText = document.querySelector('.countryInfo');
 const diffBtn = document.querySelector('.diff-btn');
 const wrongAnswerSound = new Audio("wrong.mp3");
 const rightAnswerSound = new Audio("right.mp3");
-const clickSound = new Audio("click.mp3");
 const changeThemeSound = new Audio("themechange.mp3");
 const hardDiffSound = new Audio("harddiff.mp3");
 const easyDiffSound = new Audio("easydiff.mp3");
 const nextBtnSound = new Audio("nextquestion.mp3");
+
 
 let responseButtons = [];
 let countries = [];
@@ -27,6 +28,7 @@ let diffHard = false;
 
 
 scoreText.style.visibility = 'hidden';
+infoText.style.visibility = 'hidden';
 
 async function fetchCountries() {
     const response = await fetch('https://restcountries.com/v3.1/all');
@@ -38,7 +40,7 @@ async function fetchCountries() {
 
 function newQuestion() {
     resultText.textContent = '';
-
+    infoText.style.visibility = 'hidden';
     resultText.style.visibility = 'hidden';
     optionsContainer.innerHTML = '';
 
@@ -90,6 +92,8 @@ function checkOpenAnswer(inputAnswer) {
         resultText.style.visibility = 'visible';
         resultText.textContent = 'Corretto!';
         resultText.style.color = 'green';
+        infoText.style.visibility = 'visible';
+        infoText.textContent = `Lo sapevi? Il paese ${currentCountry.translations.ita.common} ha un area di ${currentCountry.area} km^2 ed una popolazione di ${currentCountry.population} persone!`
         score++;
         score++;
         score++;
@@ -122,6 +126,8 @@ function checkAnswer(selectedCountry) {
         resultText.style.visibility = 'visible';
         resultText.textContent = 'Corretto!';
         resultText.style.color = 'green';
+        infoText.style.visibility = 'visible';
+        infoText.textContent = `Lo sapevi? Il paese ${currentCountry.translations.ita.common} ha un area di ${currentCountry.area} km^2 ed una popolazione di ${currentCountry.population} persone!`
         score++;
         totalQuestionsIndex++;
         rightAnswersIndex++;
